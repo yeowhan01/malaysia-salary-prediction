@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Data files (ignore all CSVs)
+*.csv
+!ui_reference_data.csv
+
+# Model artifacts (optional – keep if small)
+*.pkl
+
+# OS
+.DS_Store
+Thumbs.db
