@@ -17,6 +17,36 @@ if "state" not in st.session_state:
     st.session_state["state"] = None
 
 
+# --------------------------------------------------
+# Sidebar Feedback
+# --------------------------------------------------
+# Sidebar Feedback Section
+st.sidebar.markdown("## 💬 Feedback")
+st.sidebar.caption("💡 Help us improve this salary prediction app by sharing your feedback!")
+
+# Make a "button-like" link that opens Google Form
+feedback_link = "https://forms.gle/zQMqx2tvwm1CY1Er6"
+st.sidebar.markdown(
+    f"""
+    <a href="{feedback_link}" target="_blank">
+        <button style="
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;">
+            📝 Share Feedback
+        </button>
+    </a>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
 tab_predict, tab_insights = st.tabs([
     "💰 Salary Prediction",
     "📊 Market Insights"
@@ -158,6 +188,7 @@ with tab_predict:
 
 
     if predict_clicked:
+
         salary = predict_salary(
             job_title,
             category,
@@ -185,6 +216,7 @@ with tab_predict:
             "⚠️ This is an estimated salary. Actual compensation may vary "
             "based on company, skills, and market conditions."
         )
+
 
 with tab_insights:
     st.subheader("📊 Malaysia Job Market Insights")
